@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "fs/promises";
+import { readFile, writeFile, appendFile } from "fs/promises";
 
 async function readfile() {
   const data = await readFile("../heloo.txt", "utf-8");
@@ -14,11 +14,11 @@ async function writetofile() {
     console.log("file created and write successully");
 
     const jsondata = {
-      name: "sujan",
+      name: "sujan khatri",
       age: 24,
     };
 
-    const writejsondata = await writeFile(
+    const writejsondata = await appendFile(
       "jsond.txt",
       JSON.stringify(jsondata, null, 2)
     );
